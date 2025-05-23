@@ -23,7 +23,7 @@ export function Footer() {
     },
     {
       icon: <Twitter className="h-5 w-5" />,
-      href: "https://twitter.com/kaushalparmar",
+      href: "https://twitter.com/KaushalPar4926",
       label: "Twitter",
     },
     {
