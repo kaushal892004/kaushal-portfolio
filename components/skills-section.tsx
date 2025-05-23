@@ -187,7 +187,7 @@ export function SkillsSection() {
         >
           <p className="text-foreground/80 max-w-2xl mx-auto">
             I continuously expand my skill set to stay current with emerging technologies and best practices in software
-            development, DevOps, and cybersecurity.
+            development, Cloud/DevOps.
           </p>
         </motion.div>
       </div>
