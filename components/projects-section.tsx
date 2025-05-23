@@ -29,7 +29,7 @@ const projects = [
     title: "PlagiateX",
     description:
       "A full-stack plagiarism detection platform built using ReactJS, Tailwind CSS, and Django with Razorpay payment integration.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/plagiatex.png",
     tags: ["ReactJS", "Tailwind CSS", "Django", "Razorpay"],
     icons: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />, <SiDjango key="django" />],
     github: "https://github.com/kaushal892004/plagiatex",
@@ -56,7 +56,7 @@ const projects = [
     title: "Catalyst",
     description:
       "AI-powered platform that identifies skill gaps and provides personalized job and training recommendations.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/catalyst.png",
     tags: ["Python", "AI", "Machine Learning", "Flask", "React"],
     icons: [<SiPython key="python" />, <SiFlask key="flask" />, <SiReact key="react" />],
     github: "https://github.com/kaushal892004/catalyst",
@@ -171,22 +171,22 @@ export function ProjectsSection() {
               >
                 <div className="relative h-48 overflow-hidden group">
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image }
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <Button
+                  <Link href={`/projects/${project.id}`} passHref>
+                  <Button
                       variant="secondary"
-                      className="btn-glow"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleProjectClick(project.id)
-                      }}
-                    >
-                      View Details <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                          className="btn-glow"
+                          onClick={(e) => e.stopPropagation()}
+  >
+    View Details <ArrowRight className="ml-2 h-4 w-4" />
+  </Button>
+</Link>
+
                   </div>
                 </div>
                 <CardContent className="flex-grow p-6">
