@@ -11,7 +11,7 @@ const timelineItems = [
     title: "Software Developer Intern",
     organization: "Wolke K8 Solutions",
     description:
-      "Working on building developer portals using the Backstage framework, including service catalogs, authentication, database integration, and custom plugins. Creating internal projects using AWS and Azure, and gaining hands-on experience with Linux and TechDocs setup.",
+      "Working on building developer portals using the Backstage framework, including service catalogs, authentication, database integration, and custom plugins.",
     icon: <Briefcase className="h-5 w-5" />,
   },
   {
@@ -35,14 +35,6 @@ const timelineItems = [
     description: "Percentage: 68.83%",
     icon: <GraduationCap className="h-5 w-5" />,
   },
-  {
-    year: "Various",
-    title: "Certifications",
-    organization: "Multiple Institutions",
-    description:
-      "Python For Data Science - NPTEL, Certificate Of Acceptance & Publication - IJRPR, 5 Days Leadership Training Program - Sarva Netrutva 88, ISRO - Hackathon",
-    icon: <Award className="h-5 w-5" />,
-  },
 ]
 
 export function TimelineSection() {
@@ -58,7 +50,6 @@ export function TimelineSection() {
     offset: ["start end", "end start"],
   })
 
-  // Always call hooks, but use the values conditionally
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
@@ -81,10 +72,8 @@ export function TimelineSection() {
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Timeline line with progress indicator */}
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary/20"></div>
 
-          {/* Only render the animated line when mounted */}
           {isMounted && (
             <motion.div
               className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-primary origin-top"
@@ -121,16 +110,10 @@ function TimelineItem({
   scrollYProgress: any
   isMounted: boolean
 }) {
-  // Calculate when this item should be in view
   const itemProgress = (index + 0.5) / timelineItems.length
 
-  // Always call useTransform hooks, regardless of isMounted
   const scale = useTransform(scrollYProgress, [itemProgress - 0.2, itemProgress, itemProgress + 0.2], [0.95, 1, 0.95])
-  const itemOpacity = useTransform(
-    scrollYProgress,
-    [itemProgress - 0.2, itemProgress, itemProgress + 0.2],
-    [0.7, 1, 0.7],
-  )
+  const itemOpacity = useTransform(scrollYProgress, [itemProgress - 0.2, itemProgress, itemProgress + 0.2], [0.7, 1, 0.7])
   const boxShadow = useTransform(
     scrollYProgress,
     [itemProgress - 0.2, itemProgress, itemProgress + 0.2],
@@ -147,12 +130,12 @@ function TimelineItem({
         index % 2 === 0 ? "md:flex-row-reverse" : ""
       }`}
     >
-      <div className="flex items-center mb-4 md:mb-0 md:w-1/2">
+      <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-4 md:mb-0">
         <motion.div
           style={isMounted ? { scale, opacity: itemOpacity } : {}}
-          className={`md:${
-            index % 2 === 0 ? "ml-6" : "mr-6"
-          } md:text-${index % 2 === 0 ? "left" : "right"} w-full glass p-4 rounded-lg`}
+          className={`w-full max-w-md glass p-4 rounded-lg text-left md:text-${index % 2 === 0 ? "left" : "right"} ${
+            index % 2 === 0 ? "md:ml-6" : "md:mr-6"
+          }`}
         >
           <div className="flex items-center mb-2">
             <Calendar className="h-4 w-4 mr-2 text-primary" />
@@ -164,15 +147,14 @@ function TimelineItem({
         </motion.div>
       </div>
 
-      {/* Timeline dot */}
       <motion.div
         style={isMounted ? { scale, boxShadow } : {}}
-        className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-background border-4 border-primary flex items-center justify-center z-10"
+        className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 min-w-[2.5rem] rounded-full bg-background border-4 border-primary flex items-center justify-center z-10"
       >
         <span className="text-primary">{item.icon}</span>
       </motion.div>
 
-      <div className="md:w-1/2"></div>
+      <div className="hidden md:block md:w-1/2"></div>
     </motion.div>
   )
 }
