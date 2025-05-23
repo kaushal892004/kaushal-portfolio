@@ -28,21 +28,32 @@ export function ContactSection() {
     setFormState((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formState),
+    })
 
-    // Reset form and show success message
-    setFormState({ name: "", email: "", subject: "", message: "" })
+    if (res.ok) {
+      setFormState({ name: "", email: "", subject: "", message: "" })
+      setIsSubmitted(true)
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } else {
+      alert("Something went wrong. Please try again.")
+    }
+  } catch (error) {
+    console.error("Form submission error:", error)
+    alert("Unable to send message. Please try again later.")
+  } finally {
     setIsSubmitting(false)
-    setIsSubmitted(true)
-
-    // Hide success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
   }
+}
+
 
   const contactInfo = [
     {
