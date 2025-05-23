@@ -11,7 +11,6 @@ import Link from "next/link"
 export function AboutSection() {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-muted/30 to-background/95 relative">
-      <div className="animated-bg"></div>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,18 +32,20 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="blob-shape relative w-full h-[400px] overflow-hidden bg-gradient-to-br from-primary/20 to-primary/40">
+            <motion.div
+              className="w-[500px] h-[500px] rounded-xl overflow-hidden shadow-xl border border-primary/30 bg-background/70 backdrop-blur-md"
+              whileHover={{ scale: 1.03, rotate: 1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="/images/kaushal-image.png"
                 alt="Kaushal Parmar"
                 fill
-                className="object-cover mix-blend-overlay"
+                className="object-cover"
               />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary/10 rounded-full"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full"></div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -55,45 +56,45 @@ export function AboutSection() {
           >
             <h3 className="text-2xl font-bold mb-4">Backend Developer & DevOps Engineer</h3>
             <p className="text-foreground/80 mb-6">
-              I am a passionate Backend Developer with expertise in DevOps practices and a strong interest in
-              cybersecurity. With skills in building secure and scalable infrastructure, I strive to create solutions
-              that not only meet functional requirements but also adhere to the highest security and performance
-              standards.
+              I'm currently learning backend development and cloud/DevOps. I enjoy building scalable systems and have a growing interest in cybersecurity. I'm focused on creating reliable and secure infrastructure while exploring modern tools and best practices.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              <Card className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover-lift">
-                <CardContent className="p-4">
-                  <h4 className="font-semibold mb-2">Education</h4>
-                  <p className="text-sm text-foreground/70">B.E. (IT) at LDRP-ITR, Gandhinagar</p>
-                  <p className="text-xs text-foreground/60 mt-1">CPI: 8.12 (2022-Present)</p>
-                </CardContent>
-              </Card>
-              <Card className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover-lift">
-                <CardContent className="p-4">
-                  <h4 className="font-semibold mb-2">Location</h4>
-                  <p className="text-sm text-foreground/70">Gandhinagar, Gujarat, India</p>
-                  <p className="text-xs text-foreground/60 mt-1">Working globally</p>
-                </CardContent>
-              </Card>
-              <Card className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover-lift">
-                <CardContent className="p-4">
-                  <h4 className="font-semibold mb-2">Languages</h4>
-                  <p className="text-sm text-foreground/70">Gujarati, Hindi, English</p>
-                </CardContent>
-              </Card>
-              <Card className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover-lift">
-                <CardContent className="p-4">
-                  <h4 className="font-semibold mb-2">Interests</h4>
-                  <p className="text-sm text-foreground/70">DevOps, Cloud Infrastructure, Cybersecurity</p>
-                </CardContent>
-              </Card>
+              {[
+                {
+                  title: "Education",
+                  desc: "B.E. (IT) at LDRP-ITR, Gandhinagar",
+                  sub: "CPI: 8.21 (2022-Present)"
+                },
+                {
+                  title: "Location",
+                  desc: "Gandhinagar, Gujarat, India",
+                  // sub: "Working globally"
+                },
+                {
+                  title: "Languages",
+                  desc: "Gujarati, Hindi, English"
+                },
+                {
+                  title: "Interests",
+                  desc: "DevOps, Cloud , Cybersecurity"
+                }
+              ].map((item, idx) => (
+                <Card
+                  key={idx}
+                  className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                >
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold mb-2">{item.title}</h4>
+                    <p className="text-sm text-foreground/70">{item.desc}</p>
+                    {item.sub && <p className="text-xs text-foreground/60 mt-1">{item.sub}</p>}
+                  </CardContent>
+                </Card>
+              ))}
             </div>
 
             <p className="text-foreground/80 mb-6">
-              My journey in technology has been driven by curiosity and a desire to solve complex infrastructure and
-              deployment challenges. I believe in continuous learning and staying updated with the latest technologies,
-              cloud services, and security practices.
+              My journey in technology started with an interest in cybersecurity during my first semester, where I explored networking, learned Linux, and participated in CTFs. In my second year, I began learning Python and backend frameworks like Flask, Django, and FastAPI, building several projects along the way. Now, I'm passionate about growing my skills in cloud and DevOps, and I'm continuously learning to build a strong career in this field.
             </p>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
