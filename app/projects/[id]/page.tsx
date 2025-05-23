@@ -45,7 +45,7 @@ const projects = [
     title: "PlagiateX",
     description:
       "A full-stack plagiarism detection platform built using ReactJS, Tailwind CSS, and Django with Razorpay payment integration.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/plagiatex.png?height=300&width=500",
     tags: ["ReactJS", "Tailwind CSS", "Django", "Razorpay"],
     icons: [
       { icon: <SiReact />, name: "React.js" },
@@ -147,7 +147,7 @@ const projects = [
     title: "Catalyst",
     description:
       "AI-powered platform that identifies skill gaps and provides personalized job and training recommendations.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/catalyst.png?height=300&width=500",
     tags: ["Python", "AI", "Machine Learning", "Flask", "React"],
     icons: [
       { icon: <SiPython />, name: "Python" },
