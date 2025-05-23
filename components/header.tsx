@@ -66,7 +66,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: navItems.length * 0.1 }}
           >
-            <Button
+            {/* <Button
               asChild
               variant="outline"
               className="ml-4 btn-enhanced border-primary text-primary hover:bg-primary/10 hover:text-primary"
@@ -74,7 +74,7 @@ export function Header() {
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
               </Link>
-            </Button>
+            </Button> */}
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -120,7 +120,7 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button
+              {/* <Button
                 asChild
                 variant="outline"
                 className="w-full btn-enhanced border-primary text-primary hover:bg-primary/10 hover:text-primary"
@@ -128,7 +128,7 @@ export function Header() {
                 <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   Resume
                 </Link>
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
         )}
