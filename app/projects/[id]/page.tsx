@@ -97,7 +97,7 @@ const projects = [
     id: "jarvis",
     title: "Jarvis",
     description: "A smart, voice-activated personal assistant designed to perform a variety of tasks using Python.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/Jarvis.png?height=300&width=500",
     tags: ["Python", "pyttsx3", "speech_recognition", "PyAudio"],
     icons: [
       { icon: <SiPython />, name: "Python" },
@@ -204,7 +204,7 @@ const projects = [
     id: "github-jira-integration",
     title: "GitHub-Jira Integration",
     description: "AWS Lambda automation for GitHub and Jira integration with scheduled updates and S3 storage.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/Github-Jira.png?height=300&width=500",
     tags: ["AWS Lambda", "GitHub API", "Jira API", "S3", "Python"],
     icons: [
       { icon: <SiAmazonwebservices />, name: "AWS Lambda" },
@@ -258,7 +258,7 @@ const projects = [
     id: "secure-key-management",
     title: "Secure Key Management",
     description: "AWS SSM & CloudFormation solution for securely managing API keys without hardcoding.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/SSM-Cloudformation.png?height=300&width=500",
     tags: ["AWS SSM", "CloudFormation", "Lambda", "Security", "IaC"],
     icons: [
       { icon: <SiAmazonwebservices />, name: "AWS SSM" },
@@ -307,7 +307,7 @@ const projects = [
     id: "snowflake-azure-integration",
     title: "Snowflake to Azure Integration",
     description: "Data transfer automation from Snowflake to Azure Blob with validation using Azure Data Factory.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/Snowflake-ADF.png?height=300&width=500",
     tags: ["Azure Data Factory", "Snowflake", "Azure Blob", "Data Validation"],
     icons: [
       { icon: <FaMicrosoft />, name: "Azure Data Factory" },
@@ -420,9 +420,15 @@ export default function ProjectDetail() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-2"
             >
-              <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-8">
-                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-              </div>
+              <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-8 bg-white">
+  <Image
+    src={project.image || "/placeholder.svg"}
+    alt={project.title}
+    fill
+    className="object-contain bg-white p-4"
+  />
+</div>
+
 
               <div className="flex items-center mb-6">
                 <h1 className="text-3xl md:text-4xl font-bold">{project.title}</h1>
