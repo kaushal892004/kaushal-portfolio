@@ -42,7 +42,7 @@ const projects = [
     id: "jarvis",
     title: "Jarvis",
     description: "A smart, voice-activated personal assistant designed to perform a variety of tasks using Python.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/Jarvis.png",
     tags: ["Python", "pyttsx3", "speech_recognition", "PyAudio"],
     icons: [<SiPython key="python" />],
     github: "https://github.com/kaushal892004/jarvis",
@@ -69,7 +69,7 @@ const projects = [
     id: "github-jira-integration",
     title: "GitHub-Jira Integration",
     description: "AWS Lambda automation for GitHub and Jira integration with scheduled updates and S3 storage.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/Github-Jira.png",
     tags: ["AWS Lambda", "GitHub API", "Jira API", "S3", "Python"],
     icons: [
       <SiAmazonwebservices key="aws" />,
@@ -87,7 +87,7 @@ const projects = [
     id: "secure-key-management",
     title: "Secure Key Management",
     description: "AWS SSM & CloudFormation solution for securely managing API keys without hardcoding.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/SSM-CloudFormation.png",
     tags: ["AWS SSM", "CloudFormation", "Lambda", "Security", "IaC"],
     icons: [<SiAmazonwebservices key="aws" />, <SiTerraform key="terraform" />],
     github: "https://github.com/kaushal892004/secure-key-management",
@@ -100,7 +100,7 @@ const projects = [
     id: "snowflake-azure-integration",
     title: "Snowflake to Azure Integration",
     description: "Data transfer automation from Snowflake to Azure Blob with validation using Azure Data Factory.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/images/Snowflake-ADF.png",
     tags: ["Azure Data Factory", "Snowflake", "Azure Blob", "Data Validation"],
     icons: [<FaMicrosoft key="azure" />, <SiSnowflake key="snowflake" />],
     github: "https://github.com/kaushal892004/snowflake-azure-integration",
@@ -169,26 +169,26 @@ export function ProjectsSection() {
                       : "0 10px 30px -15px rgba(0, 0, 0, 0.2)",
                 }}
               >
-                <div className="relative h-48 overflow-hidden group">
-                  <Image
-                    src={project.image }
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <Link href={`/projects/${project.id}`} passHref>
-                  <Button
-                      variant="secondary"
-                          className="btn-glow"
-                          onClick={(e) => e.stopPropagation()}
-  >
-    View Details <ArrowRight className="ml-2 h-4 w-4" />
-  </Button>
-</Link>
+              <div className="relative h-48 overflow-hidden group bg-white">
+  <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    className="object-contain bg-white p-4 transition-transform duration-700 group-hover:scale-105"
+  />
+  <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+    <Link href={`/projects/${project.id}`} passHref>
+      <Button
+        variant="secondary"
+        className="btn-glow"
+        onClick={(e) => e.stopPropagation()}
+      >
+        View Details <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+    </Link>
+  </div>
+</div>
 
-                  </div>
-                </div>
                 <CardContent className="flex-grow p-6">
                   <div className="text-xs text-primary/80 mb-2">{project.period}</div>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
