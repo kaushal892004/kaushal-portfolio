@@ -96,7 +96,7 @@ function TechIcon({ name, position, color, rotation = [0, 0, 0], size = 0.5 }) {
         emissive={color}
         emissiveIntensity={hovered ? 0.5 : 0.2}
       />
-      <Text
+      {/* <Text
         position={[0, 0, 0.06]}
         fontSize={size * 0.3}
         color="white"
@@ -106,7 +106,18 @@ function TechIcon({ name, position, color, rotation = [0, 0, 0], size = 0.5 }) {
         font="/fonts/Geist_Bold.json"
       >
         {name}
-      </Text>
+      </Text> */}
+      <Text
+  position={[0, 0, 0.06]}
+  fontSize={size * 0.3}
+  color="white"
+  anchorX="center"
+  anchorY="middle"
+  maxWidth={size * 0.8}
+>
+  {name}
+</Text>
+
     </mesh>
   )
 }
@@ -131,10 +142,80 @@ function GlowingOrb({ position, color, size = 1 }) {
   )
 }
 
-// Particle system for background
+// // Particle system for background
+// function ParticleSystem({ count = 100 }) {
+//   const particles = useRef([])
+//   const meshRef = useRef()
+
+//   // Initialize particles
+//   useEffect(() => {
+//     particles.current = Array.from({ length: count }, () => ({
+//       position: new Vector3(
+//         MathUtils.randFloatSpread(40),
+//         MathUtils.randFloatSpread(40),
+//         MathUtils.randFloatSpread(40),
+//       ),
+//       speed: MathUtils.randFloat(0.01, 0.05),
+//       direction: new Vector3(
+//         MathUtils.randFloatSpread(0.2),
+//         MathUtils.randFloatSpread(0.2),
+//         MathUtils.randFloatSpread(0.2),
+//       ),
+//     }))
+//   }, [count])
+
+//   useFrame(() => {
+//     if (!meshRef.current) return
+
+//     const positions = meshRef.current.geometry.attributes.position.array
+
+//     particles.current.forEach((particle, i) => {
+//       // Update particle position
+//       // particle.position
+//       //   .add(particle.direction.clone().multiplyScalar(particle.speed))
+
+//       //   [
+//       //     // Boundary check and bounce
+//       //     ("x", "y", "z")
+//       //   ].forEach((axis) => {
+//       //     if (Math.abs(particle.position[axis]) > 20) {
+//       //       particle.direction[axis] *= -1
+//       //     }
+//       //   })
+//       // Update particle position
+// particle.position.add(particle.direction.clone().multiplyScalar(particle.speed))
+
+// // Boundary check and bounce
+// ["x", "y", "z"].forEach((axis) => {
+//   if (Math.abs(particle.position[axis]) > 20) {
+//     particle.direction[axis] *= -1
+//   }
+// })
+
+
+//       // Update buffer geometry
+//       const idx = i * 3
+//       positions[idx] = particle.position.x
+//       positions[idx + 1] = particle.position.y
+//       positions[idx + 2] = particle.position.z
+//     })
+
+//     meshRef.current.geometry.attributes.position.needsUpdate = true
+//   })
+
+//   return (
+//     <points ref={meshRef}>
+//       <bufferGeometry>
+//         <bufferAttribute attach="attributes-position" count={count} array={new Float32Array(count * 3)} itemSize={3} />
+//       </bufferGeometry>
+//       <pointsMaterial size={0.05} color="#ffffff" transparent opacity={0.3} />
+//     </points>
+//   )
+// }
+
 function ParticleSystem({ count = 100 }) {
-  const particles = useRef([])
-  const meshRef = useRef()
+  const particles = useRef([]);
+  const meshRef = useRef();
 
   // Initialize particles
   useEffect(() => {
@@ -142,54 +223,56 @@ function ParticleSystem({ count = 100 }) {
       position: new Vector3(
         MathUtils.randFloatSpread(40),
         MathUtils.randFloatSpread(40),
-        MathUtils.randFloatSpread(40),
+        MathUtils.randFloatSpread(40)
       ),
       speed: MathUtils.randFloat(0.01, 0.05),
       direction: new Vector3(
         MathUtils.randFloatSpread(0.2),
         MathUtils.randFloatSpread(0.2),
-        MathUtils.randFloatSpread(0.2),
+        MathUtils.randFloatSpread(0.2)
       ),
-    }))
-  }, [count])
+    }));
+  }, [count]);
 
   useFrame(() => {
-    if (!meshRef.current) return
+    if (!meshRef.current) return;
 
-    const positions = meshRef.current.geometry.attributes.position.array
+    const positions = meshRef.current.geometry.attributes.position.array;
 
     particles.current.forEach((particle, i) => {
-      // Update particle position
-      particle.position
-        .add(particle.direction.clone().multiplyScalar(particle.speed))
+      // Move the particle
+      particle.position.add(particle.direction.clone().multiplyScalar(particle.speed));
 
-        [
-          // Boundary check and bounce
-          ("x", "y", "z")
-        ].forEach((axis) => {
-          if (Math.abs(particle.position[axis]) > 20) {
-            particle.direction[axis] *= -1
-          }
-        })
+      // Bounce off edges
+      ["x", "y", "z"].forEach((axis) => {
+        if (Math.abs(particle.position[axis]) > 20) {
+          particle.direction[axis] *= -1;
+        }
+      });
 
       // Update buffer geometry
-      const idx = i * 3
-      positions[idx] = particle.position.x
-      positions[idx + 1] = particle.position.y
-      positions[idx + 2] = particle.position.z
-    })
+      const idx = i * 3;
+      positions[idx] = particle.position.x;
+      positions[idx + 1] = particle.position.y;
+      positions[idx + 2] = particle.position.z;
+    });
 
-    meshRef.current.geometry.attributes.position.needsUpdate = true
-  })
+    meshRef.current.geometry.attributes.position.needsUpdate = true;
+  });
 
   return (
     <points ref={meshRef}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={count} array={new Float32Array(count * 3)} itemSize={3} />
+        <bufferAttribute
+          attach="attributes-position"
+          count={count}
+          array={new Float32Array(count * 3)}
+          itemSize={3}
+        />
       </bufferGeometry>
       <pointsMaterial size={0.05} color="#ffffff" transparent opacity={0.3} />
     </points>
-  )
+  );
 }
 
 // Main scene component
