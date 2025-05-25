@@ -33,7 +33,7 @@ const projects = [
     tags: ["ReactJS", "Tailwind CSS", "Django", "Razorpay"],
     icons: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />, <SiDjango key="django" />],
     github: "https://github.com/kaushal892004/plagiatex",
-    demo: "https://plagiatex-demo.vercel.app",
+    // demo: "https://plagiatex-demo.vercel.app",
     period: "Feb 2025 - March 2025",
     fullDescription:
       "PlagiateX is a full-stack plagiarism detection platform built using ReactJS, Tailwind CSS, and Django. It features clear user authentication, integrated Razorpay payment gateway for premium services, and provides advanced services such as plagiarism detection, grammar correction, AI-generated content identification, paraphrasing, and humanizing text.",
@@ -60,7 +60,7 @@ const projects = [
     tags: ["Python", "AI", "Machine Learning", "Flask", "React"],
     icons: [<SiPython key="python" />, <SiFlask key="flask" />, <SiReact key="react" />],
     github: "https://github.com/kaushal892004/catalyst",
-    demo: "https://catalyst-demo.vercel.app",
+    // demo: "https://catalyst-demo.vercel.app",
     period: "July 2024 - Sep 2024",
     fullDescription:
       "Catalyst is an AI-powered platform that identifies skill gaps by analyzing user profiles and provides personalized job and training recommendations. It offers real-time job market insights, adaptive learning pathways, and skills verification to enhance career development.",
