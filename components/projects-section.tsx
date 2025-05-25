@@ -87,7 +87,7 @@ const projects = [
     id: "secure-key-management",
     title: "Secure Key Management",
     description: "AWS SSM & CloudFormation solution for securely managing API keys without hardcoding.",
-    image: "/images/SSM-CloudFormation.png",
+    image: "/images/SSM-Cloudformation.png",
     tags: ["AWS SSM", "CloudFormation", "Lambda", "Security", "IaC"],
     icons: [<SiAmazonwebservices key="aws" />, <SiTerraform key="terraform" />],
     github: "https://github.com/kaushal892004/secure-key-management",
