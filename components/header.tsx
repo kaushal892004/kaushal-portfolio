@@ -89,7 +89,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: (navItems.length + 1) * 0.1 }}
           >
-            <ModeToggle />
+            {/* <ModeToggle /> */}
           </motion.div>
         </nav>
 
