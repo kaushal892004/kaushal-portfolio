@@ -18,7 +18,7 @@ export function Footer() {
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      href: "https://linkedin.com/in/kaushalparmar",
+      href: "https://linkedin.com/in/kaushal-parmar-48b1782a7",
       label: "LinkedIn",
     },
     {
@@ -34,28 +34,34 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-muted py-12 relative">
-      <div className="animated-bg"></div>
+<footer className="bg-background text-white py-16 mt-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
+          {/* Terminal-style Branding */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-6 font-mono text-sm sm:text-base"
           >
-            <Link href="#home" className="text-3xl font-bold">
-              <span className="text-primary">K</span>aushal
+            <Link href="#home" className="flex items-center gap-1 sm:gap-2">
+              <span className="text-green-400">kaushal@portfolio</span>
+              <span className="text-white">:</span>
+              <span className="text-blue-400">~</span>
+              <span className="text-white">$</span>
+              <span className="ml-1 text-white">Contact</span>
+              <span className="text-white animate-pulse">▌</span>
             </Link>
           </motion.div>
 
+          {/* Social Icons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-4 mb-8"
+            className="flex flex-wrap justify-center gap-4 mb-6"
           >
             {socialLinks.map((link, index) => (
               <Button
@@ -65,23 +71,30 @@ export function Footer() {
                 size="icon"
                 className="rounded-full hover:bg-primary/10 hover:text-primary transition-all duration-300"
               >
-                <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+                <Link
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
                   {link.icon}
                 </Link>
               </Button>
             ))}
           </motion.div>
 
+          {/* Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-center text-foreground/70 mb-8"
+            className="text-center text-zinc-500 text-sm mb-6"
           >
             <p>&copy; {new Date().getFullYear()} Kaushal Parmar. All rights reserved.</p>
           </motion.div>
 
+          {/* Scroll to Top */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,9 +102,9 @@ export function Footer() {
             viewport={{ once: true }}
           >
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
-              className="rounded-full btn-enhanced border-primary text-primary hover:bg-primary/10"
+              className="rounded-full border border-zinc-700 hover:border-primary hover:text-primary transition-all"
               onClick={scrollToTop}
             >
               <ArrowUp className="h-5 w-5" />
