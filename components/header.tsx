@@ -35,16 +35,24 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="#home" className="text-2xl font-bold">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center"
-          >
-            <span className="text-primary">K</span>aushal
-          </motion.div>
-        </Link>
+   <Link href="#home" className="text-base sm:text-lg font-mono">
+  <motion.div
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6 }}
+    className="flex items-center gap-1 sm:gap-2"
+  >
+    <span className="text-green-400">kaushal@portfolio</span>
+    <span className="text-white">:</span>
+    <span className="text-blue-400">~</span>
+    <span className="text-white">$</span>
+    <span className="ml-1 text-white">ls</span>
+    <span className="text-white animate-pulse">▌</span>
+  </motion.div>
+</Link>
+
+
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
