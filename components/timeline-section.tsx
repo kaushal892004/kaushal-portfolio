@@ -18,7 +18,7 @@ const timelineItems = [
     year: "2022 - Present",
     title: "B.E. in Information Technology",
     organization: "LDRP-ITR, Gandhinagar",
-    description: "CPI: 8.12",
+    description: "CPI: 8.21",
     icon: <GraduationCap className="h-5 w-5" />,
   },
   {
