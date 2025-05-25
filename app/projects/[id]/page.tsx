@@ -54,7 +54,7 @@ const projects = [
       { icon: <SiRazorpay />, name: "Razorpay" },
     ],
     github: "https://github.com/kaushal892004/plagiatex",
-    demo: "https://plagiatex-demo.vercel.app",
+    // demo: "https://plagiatex-demo.vercel.app",
     period: "Feb 2025 - March 2025",
     fullDescription:
       "PlagiateX is a full-stack plagiarism detection platform built using ReactJS, Tailwind CSS, and Django. It features clear user authentication, integrated Razorpay payment gateway for premium services, and provides advanced services such as plagiarism detection, grammar correction, AI-generated content identification, paraphrasing, and humanizing text.",
@@ -106,7 +106,7 @@ const projects = [
       { icon: <FaPython />, name: "PyAudio" },
     ],
     github: "https://github.com/kaushal892004/jarvis",
-    demo: "",
+    // demo: "",
     period: "Sep 2024 - Oct 2024",
     fullDescription:
       "Jarvis is a smart, voice-activated personal assistant designed to perform a variety of tasks, including speech recognition, text-to-speech synthesis, and executing commands like opening applications, providing information, and more. Built with Python, it leverages libraries like pyttsx3, speech_recognition, and PyAudio to deliver an interactive user experience.",
@@ -156,7 +156,7 @@ const projects = [
       { icon: <SiMongodb />, name: "MongoDB" },
     ],
     github: "https://github.com/kaushal892004/catalyst",
-    demo: "https://catalyst-demo.vercel.app",
+    // demo: "https://catalyst-demo.vercel.app",
     period: "July 2024 - Sep 2024",
     fullDescription:
       "Catalyst is an AI-powered platform that identifies skill gaps by analyzing user profiles and provides personalized job and training recommendations. It offers real-time job market insights, adaptive learning pathways, and skills verification to enhance career development.",
@@ -213,7 +213,7 @@ const projects = [
       { icon: <SiPython />, name: "Python" },
     ],
     github: "https://github.com/kaushal892004/github-jira-integration",
-    demo: "",
+    // demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
       "This project uses AWS Lambda to automate GitHub and Jira integration. One Lambda function fetches a user's GitHub repositories and creates Jira tickets labeled 'Created by AWS'. Another scheduled Lambda runs every 4 hours, checks for updates on these tickets across all Jira projects, logs the changes in a .txt file, and uploads it to an S3 bucket for tracking.",
@@ -267,7 +267,7 @@ const projects = [
       { icon: <SiTerraform />, name: "IaC" },
     ],
     github: "https://github.com/kaushal892004/secure-key-management",
-    demo: "",
+    // demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
       "This project focuses on securely managing API keys using AWS SSM (Systems Manager) Parameters instead of hardcoding them or using environment variables. The Lambda code was updated to fetch keys directly from SSM, with global variables pointing to these parameters for easier access. Additionally, a CloudFormation template was created to automate the deployment of the Lambda function along with the creation of required SSM parameters, enabling consistent and secure infrastructure setup.",
@@ -316,7 +316,7 @@ const projects = [
       { icon: <FaMicrosoft />, name: "Data Validation" },
     ],
     github: "https://github.com/kaushal892004/snowflake-azure-integration",
-    demo: "",
+    // demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
       "This project automates data transfer from Snowflake to an Azure Blob container using Azure Data Factory. A CSV file was manually uploaded to Snowflake, and Data Factory was set up to fetch the data every 6 hours and store it as a CSV in Blob storage. A data validation mechanism was implemented to verify data integrity at both the source and destination. The complete workflow, including data validation, was successfully implemented and tested.",
