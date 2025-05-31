@@ -212,7 +212,7 @@ const projects = [
       { icon: <SiJira />, name: "Jira API" },
       { icon: <SiPython />, name: "Python" },
     ],
-    github: "https://github.com/kaushal892004/github-jira-integration",
+    github: "https://github.com/kaushal892004/Github-Jira-Lambda-Sync",
     // demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
@@ -266,7 +266,7 @@ const projects = [
       { icon: <FaAws />, name: "Lambda" },
       { icon: <SiTerraform />, name: "IaC" },
     ],
-    github: "https://github.com/kaushal892004/secure-key-management",
+    github: "https://github.com/kaushal892004/SSM-CloudFormation-Sync",
     // demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
@@ -315,7 +315,7 @@ const projects = [
       { icon: <FaMicrosoft />, name: "Azure Blob" },
       { icon: <FaMicrosoft />, name: "Data Validation" },
     ],
-    github: "https://github.com/kaushal892004/snowflake-azure-integration",
+    github: "https://github.com/kaushal892004/Snowflake-Blob-ADF-Sync",
     // demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
