@@ -77,7 +77,7 @@ const projects = [
       <SiJira key="jira" />,
       <SiPython key="python" />,
     ],
-    github: "https://github.com/kaushal892004/github-jira-integration",
+    github: "https://github.com/kaushal892004/Github-Jira-Lambda-Sync",
     demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
@@ -90,7 +90,7 @@ const projects = [
     image: "/images/SSM-Cloudformation.png",
     tags: ["AWS SSM", "CloudFormation", "Lambda", "Security", "IaC"],
     icons: [<SiAmazonwebservices key="aws" />, <SiTerraform key="terraform" />],
-    github: "https://github.com/kaushal892004/secure-key-management",
+    github: "https://github.com/kaushal892004/SSM-CloudFormation-Sync",
     demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
@@ -103,7 +103,7 @@ const projects = [
     image: "/images/Snowflake-ADF.png",
     tags: ["Azure Data Factory", "Snowflake", "Azure Blob", "Data Validation"],
     icons: [<FaMicrosoft key="azure" />, <SiSnowflake key="snowflake" />],
-    github: "https://github.com/kaushal892004/snowflake-azure-integration",
+    github: "https://github.com/kaushal892004/Snowflake-Blob-ADF-Sync",
     demo: "",
     period: "Feb 2025 - March 2025",
     fullDescription:
