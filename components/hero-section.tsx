@@ -103,7 +103,7 @@ export function HeroSection() {
             size="lg"
             className="text-lg btn-glow btn-shimmer bg-primary hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:shadow-xl"
           >
-            <a href="/resume/Kaushal_Parmar_Resume.pdf" download>
+            <a href="/resume/Kaushal-Resume-Final.pdf" download>
               Resume
             </a>
           </Button>
