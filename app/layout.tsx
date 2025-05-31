@@ -16,12 +16,33 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Kaushal-portfolio",
+  title: "Kaushal Portfolio",
   description:
-    "Portfolio of Kaushal Parmar, a passionate Backend Developer and DevOps Engineer.",
-  keywords: ["Backend", "DevOps", "Python", "Developer", "Portfolio", "Kaushal Parmar"],
+    "Kaushal Parmar's professional portfolio showcasing projects in Backend Development, Cloud Computing, DevOps, Python programming, and software engineering.",
+  keywords: [
+    "Backend Developer",
+    "DevOps Engineer",
+    "Cloud Engineer",
+    "Python Developer",
+    "AWS",
+    "Azure",
+    "Docker",
+    "Terraform",
+    "Linux",
+    "Software Engineer",
+    "Portfolio",
+    "Kaushal Parmar",
+    "Full-stack Developer",
+    "Microservices",
+    "CI/CD",
+    "Infrastructure as Code",
+    "Cloud Computing",
+    "Kubernetes",
+    "API Development",
+  ],
   // generator: "v0.dev",
 }
+
 
 export default function RootLayout({
   children,
@@ -31,6 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <head>
+          <link rel="icon" href="/images/icon.png" />
+          {/* <link rel="icon" href="/images/icon2.png" /> */}
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -50,6 +74,7 @@ export default function RootLayout({
           {/* <EnhancedTechIcons3D /> */}
           <ClientEnhanced3D />
           {children}
+           
         </ThemeProvider>
       </body>
     </html>
